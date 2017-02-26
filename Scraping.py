@@ -14,7 +14,7 @@ status_code = req.status_code
 if status_code == 200:
 
     # Pasamos el contenido HTML de la web a un objeto BeautifulSoup()
-    html = BeautifulSoup(req.text)
+    html = BeautifulSoup(req.text, "html.parser")
 
     # Obtenemos todos los divs donde estan las entradas
     entradas = html.find_all('div', {'class': 'col-md-4 col-xs-12'})
